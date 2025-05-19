@@ -1,8 +1,8 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedHeading from '@/components/AnimatedHeading';
+import founderImage from '/lovable-uploads/f0223669-eff0-471b-98d1-90dda23e0449.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,7 +123,7 @@ const About = () => {
     {
       name: "Amuthan",
       position: "Founder & Master Stylist",
-      image: "/images/team-1.jpg",
+      image: founderImage,
       description: "With over 15 years of experience in men's grooming, Amuthan brings expertise and passion to every haircut."
     },
     {
@@ -172,7 +172,7 @@ const About = () => {
               <div className="relative">
                 <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-salon-gold"></div>
                 <img 
-                  src="/images/story.jpg" 
+                  src="/lovable-uploads/e79be5c6-b6c9-462c-8dc0-814f875433da.png" 
                   alt="Our Story" 
                   className="w-full rounded-lg relative z-10"
                 />

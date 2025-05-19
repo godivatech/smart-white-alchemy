@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-cover bg-center flex items-center" style={{ backgroundImage: 'url(/images/contact-hero.jpg)' }}>
+      <section className="relative py-20 bg-cover bg-center flex items-center" style={{ backgroundImage: 'url(/lovable-uploads/e79be5c6-b6c9-462c-8dc0-814f875433da.png)' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-salon-black/90 to-salon-black/70"></div>
         <div className="page-container relative z-10">
           <div className="max-w-2xl">
