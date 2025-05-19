@@ -4,6 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
+// Import custom logo
+import logo from '/lovable-uploads/c16ee8f1-b8ef-426a-b726-108a9bbd6216.png';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -46,13 +49,8 @@ const Navbar = () => {
     >
       <div className="page-container flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="relative">
-            <span className="text-2xl md:text-3xl font-playfair font-bold text-white">
-              SMART<span className="text-salon-gold">&</span>WHITE
-            </span>
-            <span className="block text-xs md:text-sm text-salon-gold tracking-widest">
-              HAIR SALON & SPA FOR MENS
-            </span>
+          <div className="relative flex items-center">
+            <img src={logo} alt="SMART & WHITE" className="h-12 md:h-14" />
           </div>
         </Link>
         

@@ -2,6 +2,9 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
+// Import custom logo
+import logo from '/lovable-uploads/c16ee8f1-b8ef-426a-b726-108a9bbd6216.png';
+
 const Footer = () => {
   return (
     <footer className="bg-salon-darkgray border-t border-salon-gold/20">
@@ -9,9 +12,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-16">
           <div>
             <div className="mb-6">
-              <span className="text-3xl font-playfair font-bold text-white">
-                SMART<span className="text-salon-gold">&</span>WHITE
-              </span>
+              <div className="mb-4">
+                <img src={logo} alt="SMART & WHITE" className="h-16" />
+              </div>
               <span className="block text-sm text-salon-gold tracking-widest">
                 HAIR SALON & SPA FOR MENS
               </span>
