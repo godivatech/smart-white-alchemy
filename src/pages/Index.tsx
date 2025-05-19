@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
@@ -7,7 +6,7 @@ import AnimatedHeading from '@/components/AnimatedHeading';
 import ServiceCard from '@/components/ServiceCard';
 
 // Import icons
-import { Scissors, UserCheck, Clock, ThumbsUp } from 'lucide-react';
+import { Scissors, UserCheck, Clock, ThumbsUp, MapPin, Phone } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
