@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
@@ -123,9 +122,9 @@ const Index = () => {
         
         <div className="page-container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <div className="mx-auto w-60 mb-6 hero-text">
-              <img src={logo} alt="SMART & WHITE Logo" className="w-full" />
-            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 hero-text">
+              SMART <span className="text-salon-gold">&</span> WHITE
+            </h1>
             <h2 className="text-2xl md:text-3xl text-white mb-8 hero-text">
               Premium Hair Salon <span className="text-salon-gold">&</span> Spa for Men
             </h2>
