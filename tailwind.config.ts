@@ -113,13 +113,24 @@ export default {
 					'0%': { transform: 'scaleY(1)', transformOrigin: 'top' },
 					'100%': { transform: 'scaleY(0)', transformOrigin: 'top' }
 				},
-				floating: {
+				'floating': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
 				},
-				shimmer: {
+				'shimmer': {
 				  '0%': { backgroundPosition: '-200% 0' },
 				  '100%': { backgroundPosition: '200% 0' },
+				},
+				'spin': {
+				  '0%': { transform: 'rotate(0deg)' },
+				  '100%': { transform: 'rotate(360deg)' }
+				},
+				'pulse': {
+				  '0%, 100%': { opacity: '1' },
+				  '50%': { opacity: '0.5' }
+				},
+				'ping': {
+				  '75%, 100%': { transform: 'scale(2)', opacity: '0' }
 				},
 			},
 			animation: {
@@ -133,8 +144,12 @@ export default {
 				'reveal': 'reveal 1s ease-out forwards',
 				'floating': 'floating 3s ease-in-out infinite',
 				'shimmer': 'shimmer 3s linear infinite',
+				'spin': 'spin 1s linear infinite',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'ping': 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

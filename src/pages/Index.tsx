@@ -1,11 +1,13 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import ServiceCard from '@/components/ServiceCard';
 import QuickBookingModal from '@/components/QuickBookingModal';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 // Import icons
 import { Scissors, UserCheck, Clock, ThumbsUp, MapPin, Phone, Sparkles } from 'lucide-react';
@@ -13,6 +15,8 @@ import { Scissors, UserCheck, Clock, ThumbsUp, MapPin, Phone, Sparkles } from 'l
 // Import custom logo
 import heroPoster from '/lovable-uploads/e79be5c6-b6c9-462c-8dc0-814f875433da.png';
 import founderImage from '/lovable-uploads/f0223669-eff0-471b-98d1-90dda23e0449.png';
+import beforeImage from '/images/haircut-1.jpg';
+import afterImage from '/images/haircut-2.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +24,7 @@ const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     if (!heroRef.current || !parallaxRef.current || !aboutSectionRef.current) return;
@@ -135,11 +140,11 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center hero-text">
               <Link 
                 to="/services"
-                className="btn-primary py-3 px-8 rounded-md text-base font-semibold"
+                className="btn-primary py-3 px-8 rounded-md text-base font-semibold w-full sm:w-auto"
               >
                 Our Services
               </Link>
-              <QuickBookingModal />
+              <QuickBookingModal buttonClassName="w-full sm:w-auto py-3 px-8" />
             </div>
           </div>
         </div>
@@ -150,6 +155,51 @@ const Index = () => {
           </svg>
         </div>
       </div>
+
+      {/* Before After Slider Section */}
+      <section className="section bg-salon-black">
+        <div className="page-container">
+          <div className="text-center mb-12">
+            <div className="inline-block relative mb-4">
+              <span className="text-sm uppercase tracking-widest text-salon-gold font-medium relative z-10">
+                Transformation
+              </span>
+              <div className="absolute bottom-1 left-0 w-full h-3 bg-salon-gold/20 -skew-x-6"></div>
+            </div>
+            <AnimatedHeading 
+              text="See The Difference" 
+              className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 text-white"
+            />
+            <p className="text-gray-300 max-w-2xl mx-auto mb-10">
+              Slide to reveal the before and after transformation. Our expert stylists create remarkable differences that speak for themselves.
+            </p>
+            
+            <BeforeAfterSlider 
+              beforeImage={beforeImage} 
+              afterImage={afterImage} 
+              className="max-w-4xl mx-auto h-80 md:h-96 shadow-xl shadow-salon-gold/10 border border-salon-gold/20"
+            />
+
+            <div className="mt-8 flex justify-center">
+              <Link 
+                to="/gallery"
+                className="btn-primary py-3 px-8 rounded-md inline-flex items-center group"
+              >
+                <span>View More Transformations</span>
+                <svg 
+                  className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Preview Section */}
       <section ref={aboutSectionRef} className="section bg-salon-darkgray">
@@ -396,3 +446,4 @@ const Index = () => {
 };
 
 export default Index;
+
