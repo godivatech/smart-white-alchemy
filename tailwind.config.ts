@@ -121,6 +121,14 @@ export default {
 				  '0%': { backgroundPosition: '-200% 0' },
 				  '100%': { backgroundPosition: '200% 0' },
 				},
+				'border-flow': {
+				  '0%': { backgroundPosition: '0% 0%' },
+				  '100%': { backgroundPosition: '100% 0%' }
+				},
+				'pulse-soft': {
+				  '0%, 100%': { opacity: '1' },
+				  '50%': { opacity: '0.7' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -133,6 +141,21 @@ export default {
 				'reveal': 'reveal 1s ease-out forwards',
 				'floating': 'floating 3s ease-in-out infinite',
 				'shimmer': 'shimmer 3s linear infinite',
+				'border-flow': 'border-flow 3s infinite linear',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-gold': 'linear-gradient(45deg, #D4AF37 0%, #E5C86D 50%, #D4AF37 100%)',
+			},
+			boxShadow: {
+				'gold-sm': '0 1px 2px 0 rgba(212, 175, 55, 0.05)',
+				'gold': '0 1px 3px 0 rgba(212, 175, 55, 0.1), 0 1px 2px 0 rgba(212, 175, 55, 0.06)',
+				'gold-md': '0 4px 6px -1px rgba(212, 175, 55, 0.1), 0 2px 4px -1px rgba(212, 175, 55, 0.06)',
+				'gold-lg': '0 10px 15px -3px rgba(212, 175, 55, 0.1), 0 4px 6px -2px rgba(212, 175, 55, 0.05)',
+				'gold-xl': '0 20px 25px -5px rgba(212, 175, 55, 0.1), 0 10px 10px -5px rgba(212, 175, 55, 0.04)',
+				'gold-2xl': '0 25px 50px -12px rgba(212, 175, 55, 0.25)',
+				'gold-inner': 'inset 0 2px 4px 0 rgba(212, 175, 55, 0.06)'
 			}
 		}
 	},
