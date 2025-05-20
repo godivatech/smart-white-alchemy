@@ -40,12 +40,12 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <PageTransition>
+      <BrowserRouter>
+        <ScrollToTop />
+        <PageTransition>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
             <Navbar />
             <main>
               <Routes>
@@ -60,9 +60,9 @@ const App = () => {
               </Routes>
             </main>
             <Footer />
-          </PageTransition>
-        </BrowserRouter>
-      </TooltipProvider>
+          </TooltipProvider>
+        </PageTransition>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
