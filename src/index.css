@@ -35,7 +35,7 @@
     --input: 48 30% 40%;
     --ring: 48 75% 52%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 48 75% 52%;
@@ -111,7 +111,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-salon-gold via-salon-gold-light to-salon-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-salon-gold via-salon-gold-light to-salon-gold-dark bg-clip-text text-transparent;
   }
   
   .gold-border {
@@ -125,35 +125,6 @@
   .page-transition {
     @apply transition-all duration-500 ease-in-out;
   }
-
-  /* Modern additions */
-  .glass-card {
-    @apply bg-salon-black/70 backdrop-blur-sm border border-salon-gold/20 rounded-lg shadow-xl;
-  }
-  
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
-  }
-  
-  .animated-border {
-    @apply relative after:absolute after:inset-0 after:border-2 after:border-salon-gold/50 after:rounded-lg after:scale-[1.02] after:opacity-0 hover:after:scale-100 hover:after:opacity-100 after:transition-all after:duration-300;
-  }
-  
-  .floating {
-    @apply animate-floating;
-  }
-  
-  .reveal-text {
-    @apply relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-salon-black before:animate-reveal;
-  }
-  
-  .outlined-text {
-    text-shadow: 
-      -1px -1px 0 #D4AF37,
-      1px -1px 0 #D4AF37,
-      -1px 1px 0 #D4AF37,
-      1px 1px 0 #D4AF37;
-  }
 }
 
 /* Special pattern for service boxes */
@@ -164,46 +135,4 @@
                     linear-gradient(-45deg, transparent 75%, rgba(212, 175, 55, 0.05) 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-}
-
-/* Modern card styles */
-.modern-card {
-  @apply relative overflow-hidden rounded-xl bg-gradient-to-b from-salon-black to-slate-900 p-0.5;
-}
-
-.modern-card::before {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-r from-salon-gold/30 via-salon-gold-light/20 to-salon-gold/30 opacity-70 transition-opacity duration-500;
-}
-
-.modern-card:hover::before {
-  @apply opacity-100;
-}
-
-.modern-card-content {
-  @apply relative bg-salon-black rounded-[0.7rem] p-6 h-full;
-}
-
-/* Modern button styles */
-.btn-modern {
-  @apply relative overflow-hidden bg-salon-gold text-salon-black px-6 py-3 rounded-full transition-all duration-300;
-}
-
-.btn-modern::before {
-  content: "";
-  @apply absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[45deg] transition-transform duration-500 ease-out;
-}
-
-.btn-modern:hover::before {
-  @apply translate-x-[150%];
-}
-
-/* Modern section divider */
-.section-divider {
-  @apply relative h-px w-full bg-gradient-to-r from-transparent via-salon-gold/50 to-transparent my-16;
-}
-
-.section-divider::before {
-  content: "✦";
-  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-salon-black text-salon-gold px-4 text-xl;
 }
