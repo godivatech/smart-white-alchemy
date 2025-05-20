@@ -24,11 +24,14 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
-gsap.registerPlugin(ScrollTrigger);
+// Initialize QueryClient
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
+    // Register GSAP plugins inside the component
+    gsap.registerPlugin(ScrollTrigger);
+    
     // Initialize GSAP
     gsap.config({
       nullTargetWarn: false,
