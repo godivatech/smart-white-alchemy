@@ -59,6 +59,9 @@
 
   body {
     @apply bg-salon-black text-white font-montserrat overflow-x-hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -95,11 +98,11 @@
   }
   
   .btn-primary {
-    @apply bg-salon-gold text-salon-black hover:bg-salon-gold-light btn;
+    @apply bg-salon-gold text-salon-black hover:bg-salon-gold-light btn hover:scale-105 transition-transform;
   }
   
   .btn-outline {
-    @apply border border-salon-gold text-salon-gold hover:bg-salon-gold hover:text-salon-black btn;
+    @apply border border-salon-gold text-salon-gold hover:bg-salon-gold hover:text-salon-black btn hover:scale-105 transition-transform;
   }
   
   .headline {
@@ -125,6 +128,46 @@
   .page-transition {
     @apply transition-all duration-500 ease-in-out;
   }
+
+  /* Modern Card Styles */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)];
+  }
+
+  /* Modern Text Styles */
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  /* Modern Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s infinite;
+  }
+
+  .perspective-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
 }
 
 /* Special pattern for service boxes */
@@ -135,4 +178,94 @@
                     linear-gradient(-45deg, transparent 75%, rgba(212, 175, 55, 0.05) 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Modern gradient overlay */
+.gold-overlay {
+  position: relative;
+}
+
+.gold-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+}
+
+/* Fancy underline animation */
+.fancy-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #D4AF37;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.fancy-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Modern image hover effect */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Grain texture for depth */
+.texture-grain {
+  position: relative;
+}
+
+.texture-grain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+  opacity: 0.1;
+  pointer-events: none;
 }

@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
+import Features from "./pages/Features";
 import NotFound from "./pages/NotFound";
 
 // Components
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/services" element={<Services />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/testimonials" element={<Testimonials />} />
+                <Route path="/features" element={<Features />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
